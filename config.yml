@@ -4,11 +4,10 @@ orbs:
 workflows:
   build:
     jobs:
-      - cypress/install:
-          build: 'npm run build'
+      - cypress/install
       - cypress/run:
           requires:
             - cypress/install
-          record: true # record results on Cypress Dashboard
-          parallel: true # split all specs across machines
-          parallelism: 3 # use 4 CircleCI machines to finish quickly
+          record: true
+          parallel: true
+          parallelism: 2
